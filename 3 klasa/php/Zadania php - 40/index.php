@@ -453,10 +453,10 @@ while(true)
         echo "<tr>";
         for($j = 1; $j <= 10; $j++){
             echo "<td 
-                    style='border-width: 2px; 
-                    border-style: solid; 
-                    border-color: black;>
-                 ".$i*$j."</td>";
+                    style='border-width: 2px;
+                    border-style: solid;
+                    border-color: black;'>"
+                .$i*$j."</td>";
         }
         echo "</tr>";
     }
@@ -474,9 +474,85 @@ while(true)
 <?php
     echo "<br><br> Zadanie 25<br>";
     
-    $colors = array("Niebieski", "Czerwony", "Zolty");
-    echo "<ol>";
+    $colors = ["Niebieski", "Czerwony", "Zolty"];
+    echo "<ul>";
     foreach ($colors as $color){
         echo "<li>".$color."</li>";
     }
+    echo "</ul>";
+?>
+
+<!--26. Wyświetl wszystkie elementy tablicy: $auta = ["VW", "Audi", "BMW", "Mercedes"]. Użyj pętli foreach.-->
+
+<?php
+    echo "<br><br> Zadanie 26<br>";
+    $auta = ["VW", "Audi", "BMW", "Mercedes"];
+    foreach ($auta as $auto){
+        echo $auto."<br>";
+    }
+?>
+
+<!--27. Zsumuj wszystkie elementy z tablicy: $liczby = [10, 25, 99, 31, 01, -15]. Użyj pętli for.-->
+<?php
+    echo "<br><br> Zadanie 27<br>";
+    $suma = 0;
+    $liczby = [10, 25, 99, 31, 01, -15];
+    for($i = 0; $i < sizeof($liczby); $i++) {
+      $suma += $liczby[$i];
+    }
+    echo $suma;
+?>
+
+<!--28. Napisz skrypt odnajdujący największy element tablicy:-->
+<!--$liczby = [10, 15, 9, 61, 78, 2, 44, 21, 30];   -->
+<?php
+    echo "<br><br> Zadanie 28<br>";
+    $liczby = [10, 15, 9, 61, 78, 2, 44, 21, 30];
+    $maks = $liczby[0];
+    foreach ($liczby as $number) {
+        if ($number > $maks) {
+            $maks = $number;
+        }
+    }
+    echo $maks."<br>";
+    echo max($liczby);
+?>
+
+
+<!--29. Napisz skrypt, który wyświetla nazwę kraju i jego stolicę . Posłuż się tablicą $europa:-->
+<!--$europa = array("Włochy" => "Rzym", "Belgia" => "Bruksela",-->
+<!--"Dania" => "Kopenhaga", "Finlandia" => "Helsinki",-->
+<!--"Francja => "Paryż", "Niemcy" => "Berlin",-->
+<!--"Rosja" => "Francja", "Polska" => "Warszawa");-->
+<!--// tu umieść kod wyświetlający informacje wg schematu:-->
+<!--// Kraj: Włochy, stolica: Rzym -->
+
+<?php
+echo "<br><br> Zadanie 29<br>";
+$europa = array("Włochy" => "Rzym",
+                "Belgia" => "Bruksela",
+                "Dania" => "Kopenhaga",
+                "Finlandia" => "Helsinki",
+                "Francja" => "Paryż",
+                "Niemcy" => "Berlin",
+                "Rosja" => "Francja",
+                "Polska" => "Warszawa");
+
+foreach ($europa as $kraj => $stolica) {
+    echo "Kraj: ".$kraj.", stolica: ".$stolica."<br>";
+}
+
+?>
+
+<!--30. Oblicz temperaturę średnia. Posłuż się tablicą $temp przechowującą odczytane temperatury:-->
+<!--$temp = [15, 18, 22, 28, 33, 37, 30, 25, 19, 14, 13, 7, 5, 0, -1, -9];-->
+
+<?php
+echo "<br><br> Zadanie 30<br>";
+$temp = [15, 18, 22, 28, 33, 37, 30, 25, 19, 14, 13, 7, 5, 0, -1, -9];
+$suma = 0;
+foreach ($temp as $temperatura) {
+    $suma += $temperatura;
+}
+echo "Średnia temperatura: ".($suma / count($temp))."<br>";
 ?>
