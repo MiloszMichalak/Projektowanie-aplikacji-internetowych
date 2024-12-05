@@ -556,3 +556,36 @@ foreach ($temp as $temperatura) {
 }
 echo "Średnia temperatura: ".($suma / count($temp))."<br>";
 ?>
+
+<!--31. Napisz funkcję  pokazImie wyświetlającą imię przekazane do niej jako argument.-->
+<?php
+    echo "<br><br> Zadanie 31<br>";
+    echo pokazImie("Test");
+    function pokazImie($imie){
+        echo "Imie: ".$imie."<br>";
+    }
+?>
+
+<!--32. Napisz funkcję obliczającą pole trójkąta równobocznego.  -->
+<?php
+
+    echo "<br><br> Zadanie 32<br>";
+    function poleTrojkata($a){
+        return  (pow($a, 2) * sqrt(3)) / 4;
+    }
+    echo poleTrojkata(5);
+
+?>
+
+<!--33. Napisz funkcję iloczyn zwracającą iloczyn dwóch liczb przekazanych jako argumenty. -->
+
+<?php   
+    echo "<br><br> Zadanie 33<br>";
+    function iloczyn($a, $b){
+        return $a * $b;
+    }
+    echo iloczyn(5, 10);
+?>
+
+
+
