@@ -1,0 +1,7 @@
+SELECT farby.kolor, farby.cena FROM farby WHERE farby.kolor LIKE "czerwony";
+
+SELECT farby.kolor, 1 / farby.pojemnosc * farby.cena as cena_jednostkowa FROM farby
+
+SELECT malowanie.id_pomieszczenia, malowanie.liczba_puszek, farby.kolor FROM malowanie NATURAL JOIN farby WHERE malowanie.id_pomieszczenia LIKE '3';
+
+CREATE VIEW pomieszcznie1 AS SELECT malowanie.id_sciany, malowanie.id_farby, malowanie.liczba_puszek FROM malowanie WHERE malowanie.id_pomieszczenia LIKE '1';

@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1>Tworzenie bazy danych</h1>
-<form method="post" action="index.php">
+<form method="post">
     <label for="dbName">Nazwa bazy danych</label>
     <input type="text" id="dbName" name="dbName" required> &nbsp;
     <label for="tableName">Nazwa tabeli</label>
@@ -45,8 +45,8 @@
             $con->query("USE ".$db);
             
             $sql = "CREATE TABLE 
-                {$_POST['tableName1']}(id INT AUTO_INCREMENT PRIMARY KEY, 
-                {$_POST['fieldName1']} INT NOT NULL, 
+                {$_POST['tableName1']} 
+                ({$_POST['fieldName1']} INT NOT NULL, 
                 {$_POST['fieldName2']} INT NOT NULL)";
             
             if ($con->query($sql) === TRUE) {
