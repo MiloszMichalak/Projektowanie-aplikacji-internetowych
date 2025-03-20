@@ -1,0 +1,7 @@
+SELECT wycieczki.nazwa FROM wycieczki WHERE wycieczki.poczatek IN("Muszyna", "Wieliczka");
+
+SELECT wycieczki.nazwa, wycieczki.opis, wycieczki.poczatek, zdjecia.zrodlo FROM wycieczki NATURAL JOIN zdjecia
+
+SELECT COUNT(wycieczki.id) FROM wycieczki;
+
+ALTER TABLE wycieczki ADD ocena int;
