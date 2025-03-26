@@ -6,6 +6,16 @@
     <title>Motocykle</title>
     <link rel="stylesheet" href="styl.css">
 </head>
+<?php
+
+    $serwer = 'localhost'; 
+    $user = 'root';
+    $haslo = '';
+    $baza = 'motory';
+
+    $conn = new mysqli($serwer, $user, $haslo, $baza);
+
+?>
 <body>
     <img src="pliki/motor.png" alt="motocykl">
     <header>
@@ -14,9 +24,19 @@
     <main>
         <section class="left">
             <h2>Gdzie pojechac?</h2>
-            <dl></dl>
+            <dl>
+                <?php
+                    $sql = "SELECT wycieczki.nazwa, wycieczki.opis, wycieczki.poczatek, zdjecia.zrodlo FROM wycieczki NATURAL JOIN zdjecia";
+                    if ($udane = $conn -> query($sql)){
+                        while ($row = $udane -> fetch_row()){
+                            echo "<dt> $row[0] rozpoczyna się w $row[2] , <a href='$row[3]'>zobacz zdjęcie</a></dt>";
+                            echo "<dd> $row[1] </dd>";
+                        }
+                    }
+                ?>
+            </dl>
         </section>
-        <section id="right">
+        <section class="right">
             <section class="right1">
                 <h2>Co kupic?</h2>
                 <ol>
@@ -29,7 +49,12 @@
             </section>
             <section class="right2">
                 <h2>Statystyki</h2>
-                <p>Wpisanych wycieczek: </p>
+                <p>Wpisanych wycieczek: <?php $sql = "SELECT COUNT(wycieczki.id) as 'wycieczki' FROM wycieczki;";
+                 if ($udane = $conn -> query($sql)){
+                    while ($row = $udane -> fetch_array()){
+                        echo $row['wycieczki'];
+                    }
+                } ?></p>
                 <p>Użytkowników forum: 200</p>
                 <p>Przesłanych zdjęć: 1300</p>
             </section>
