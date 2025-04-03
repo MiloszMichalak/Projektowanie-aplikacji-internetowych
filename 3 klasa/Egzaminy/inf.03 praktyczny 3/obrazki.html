@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Efekty obrazu</title>
+    <link rel="stylesheet" href="styl.css">
+    <script src="skrypt.js" defer></script>
+</head>
+<body>
+    <header>
+        <h2>Efekty na obrazach</h2>
+    </header>
+    <section class="wrap">
+        <section class="block">
+            <img src="pszczola.jpg" alt="pszczola na fioletowych kwiatku" id="pszczola">
+            <form>
+                <input type="radio" name="effect" id="radio1" value="blur"> <label for="radio1">Blur</label><br>
+                <input type="radio" name="effect" id="radio2" value="sepia"> <label for="radio2">Sepia</label><br>
+                <input type="radio" name="effect" id="radio3" value="invert"> <label for="radio3">Negatyw</label><br>
+                <input type="button" value="Zastosuj" id="apply">
+            </form>
+        </section>
+        <section class="block">
+            <img src="pomarancza.jpg" alt="drzewo pomarańczy" id="pomarancza"><br>
+            <input type="button" value="Kolorowy" id="kolory">
+            <input type="button" value="Czarno-biały" id="czarnoBialy">
+        </section>
+    </section>
+    <section class="wrap">
+        <section class="block">
+            <img src="owoce.jpg" alt="Kosz pełen owoców" id="owoce">
+            <input type="range" name="" id="slider" min="0" max="100" value="100"><br>
+            <input type="button" value="Zastosuj" id="zastosuj3">
+        </section>
+        <section class="block">
+            <img src="zolw.jpg" alt="Żołw w wodzie" id="zolwimg">
+            <input type="range" name="" id="slider2" min="0" max="250"><br>
+            <input type="button" value="Zastosuj" id="zastosuj4">
+        </section>
+    </section>
+    <footer>
+        <p><a href="http://www.css.com/" target="_blank">Zobacz inne efekty obrazu</a></p>
+        <p>Strone wykonal: 00000000</p>
+    </footer>
+</body>
+</html>
